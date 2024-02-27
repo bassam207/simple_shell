@@ -19,7 +19,7 @@ extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 /* Handle built-ins */
 int check_input(char **cmd, char *buf);
 void display_prompt(void);
-void handle_interrupt(int m);
+void handle_signal(int signal_number);
 char **tokenize_input(char *line);
 char *test_search_paths(char **path, char *command);
 char *append_path(char *path, char *command);
@@ -41,19 +41,19 @@ char *get_search_path(void);
 /* Helper function for efficient free */
 void release_memory(char **buffers);
 
-struct built_in
+extern struct built_in
 {
     char *env;
     char *exit;
 } built_in;
 
-struct information
+extern struct information
 {
     int final_exit;
     int line_count;
 } information;
 
-struct my_flags
+extern struct my_flags
 {
     bool interactive;
 } my_flags;

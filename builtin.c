@@ -9,8 +9,6 @@
  */
 int handle_builtin(char **command, char *line)
 {
-    struct built_in built_in = {"env", "exit"};
-
     if (my_strcmp(*command, built_in.env) == 0)
     {
         print_environment();

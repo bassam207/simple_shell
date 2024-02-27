@@ -10,6 +10,6 @@
 void exit_command(char **command, char *line)
 {
     free(line);
-    free_buffers(command);
+    release_memory(command);
     exit(0);
 }

@@ -5,6 +5,7 @@
  *
  * Return: void
  */
+char **my_environ;
 void print_environment(void)
 {
     int x = 0;
